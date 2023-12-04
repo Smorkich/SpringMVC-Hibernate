@@ -17,37 +17,43 @@ public class User {
     private String name;
     @Column(name = "Last Name")
     private String lastName;
-    @Column(name = "Age")
-    private int age;
     @Column(name = "Email")
     private String email;
 
-    public User() {
+    public User(String name, String lastName, String email) {
+        this.name = name;
+        this.lastName = lastName;
+        this.email = email;
     }
 
     public long getId() {
         return id;
     }
 
+
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getLastName() {
         return lastName;
     }
 
-
-    public int getAge() {
-        return age;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
-
 
     public String getEmail() {
         return email;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     @Override
     public String toString() {
@@ -55,7 +61,6 @@ public class User {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", age=" + age +
                 ", email='" + email + '\'' +
                 '}';
     }
