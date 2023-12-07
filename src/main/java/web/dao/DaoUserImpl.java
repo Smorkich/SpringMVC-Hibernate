@@ -11,14 +11,12 @@ public class DaoUserImpl implements DaoUser {
     private EntityManager entityManager;
     @Override
     public List<User> getUsers() {
-        String sql = "SELECT u FROM Users u";
-        return entityManager.createQuery(sql, User.class).getResultList();
+        return entityManager.createQuery("SELECT u FROM User u", User.class).getResultList();
     }
 
     @Override
     public void addUser(User user) {
-        User user1 = new User(user.getName(), user.getLastName(), user.getEmail());
-        entityManager.persist(user1);
+        entityManager.persist(user);
     }
 
     @Override

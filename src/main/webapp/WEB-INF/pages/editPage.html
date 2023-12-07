@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Add User</title>
+    <title>Edit User</title>
     <style>
         body {
             margin: 20px;
@@ -37,9 +36,10 @@
 </head>
 <body>
 <header>
-    <h1>Add user</h1>
+    <h1>Edit user</h1>
 </header>
-<form th:method="POST" th:action="@{/add}" th:object="${user}">
+<form th:method="PATCH" th:action="@{/edit}" th:object="${user}">
+    <input type="hidden" th:field="*{id}" />
     <label for="Name">Name:</label>
     <input type="text" th:field="*{name}" id="Name" required>
 
@@ -49,7 +49,7 @@
     <label for="email">Email:</label>
     <input type="email" th:field="*{email}" id="email" required>
 
-    <button type="submit">Add user</button>
+    <button type="submit">Edit</button>
 </form>
 </body>
 </html>

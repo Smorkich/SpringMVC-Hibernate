@@ -8,7 +8,7 @@ import web.model.User;
 import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
-    private DaoUser daoUser;
+    private final DaoUser daoUser;
     @Autowired
     public UserServiceImpl(DaoUser daoUser) {
         this.daoUser = daoUser;
