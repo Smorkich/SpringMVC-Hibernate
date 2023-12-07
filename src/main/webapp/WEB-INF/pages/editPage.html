@@ -39,7 +39,9 @@
     <h1>Edit user</h1>
 </header>
 <form th:method="PATCH" th:action="@{/edit}" th:object="${user}">
-    <input type="hidden" th:field="*{id}" />
+    <label for="id">Id</label>
+    <input readonly id="id" type="number" th:field="*{id}"/>
+
     <label for="Name">Name:</label>
     <input type="text" th:field="*{name}" id="Name" required>
 

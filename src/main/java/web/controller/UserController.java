@@ -26,11 +26,6 @@ public class UserController {
         model.addAttribute("users", userService.getUsers());
         return "users";
     }
-    @GetMapping("/user")
-    public String showUser(@RequestParam Long id, Model model) {
-        model.addAttribute("user", userService.getUserById(id));
-        return "user";
-    }
 
     @GetMapping("/add")
     public String add(Model model) {
@@ -48,7 +43,7 @@ public class UserController {
         return "/editPage";
     }
     @PatchMapping("/edit")
-    public String update (@ModelAttribute("user") @Valid User user) {
+    public String update (@ModelAttribute("user") User user) {
         userService.updateUser(user);
         return "redirect:/";
     }
