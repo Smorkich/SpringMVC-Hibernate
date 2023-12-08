@@ -7,8 +7,10 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 @Repository
 public class DaoUserImpl implements DaoUser {
+
     @PersistenceContext
     private EntityManager entityManager;
+
     @Override
     public List<User> getUsers() {
         return entityManager.createQuery("SELECT u FROM User u", User.class).getResultList();

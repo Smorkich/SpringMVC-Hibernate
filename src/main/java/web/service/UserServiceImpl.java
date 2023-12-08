@@ -8,11 +8,14 @@ import web.model.User;
 import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
+
     private final DaoUser daoUser;
+
     @Autowired
     public UserServiceImpl(DaoUser daoUser) {
         this.daoUser = daoUser;
     }
+
     @Override
     public List<User> getUsers() {
         return daoUser.getUsers();
