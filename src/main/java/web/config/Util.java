@@ -70,7 +70,7 @@ public class Util {
         properties.put("hibernate.show_sql", env.getProperty("db.show_sql"));
         properties.put("hibernate.hbm2ddl.auto", env.getProperty("db.hbm2ddl.auto"));
         properties.put("hibernate.dialect", env.getProperty("db.dialect"));
-        properties.put("hibernate.dialect.storage_engine", "innodb");
+
         return properties;
     }
 }
